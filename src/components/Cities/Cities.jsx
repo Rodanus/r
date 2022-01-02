@@ -1,10 +1,11 @@
 import React from "react";
-import Country from "../Country/Country";
+import City from "../City/City";
+import "./Cities.css";
 
 function Countries(props) {
   return (
     <div>
-      <Country />
+      <City />
     </div>
   );
 }

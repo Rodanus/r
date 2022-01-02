@@ -1,10 +1,11 @@
-import React from "react";
-import Countries from "../Countries/Countries";
+import React, { useEffect } from "react";
+import Cities from "../Cities/Cities";
+import "./Homepage.css";
 
 function Homepage(props) {
   return (
     <div>
-      <Countries />
+      <Cities />
     </div>
   );
 }
