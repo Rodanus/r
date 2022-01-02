@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Forcast.css";
 
 function Forcast(props) {
@@ -13,7 +14,14 @@ function Forcast(props) {
   useEffect(() => {
     getWeatherinfo();
   });
-  return <div>Hello world</div>;
+  return (
+    <div>
+      <Link to="/" className="homepage-link">
+        Home
+      </Link>
+      <p>Hello world</p>
+    </div>
+  );
 }
 
 export default Forcast;
