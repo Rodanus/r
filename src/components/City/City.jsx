@@ -4,9 +4,11 @@ import "./City.css";
 
 function City(props) {
   return (
-    <Link to={`/weather/${props.cityName}`}>
-      <h2 className="city-name">{props.cityName}</h2>
-    </Link>
+    <div className="city-container">
+      <h2 className="city-name">
+        <Link to={`/weather/${props.cityName}`}>{props.cityName}</Link>
+      </h2>
+    </div>
   );
 }
 
