@@ -1,10 +1,10 @@
 import "./App.css";
-import Homepage from "./components/Homepage/Homepage";
+import CustomRoutes from "./components/CustomRoutes/CustomRoutes";
 
 function App() {
   return (
     <div className="App">
-      <Homepage />
+      <CustomRoutes />
     </div>
   );
 }
