@@ -1,8 +1,8 @@
 import React from "react";
 import "./City.css";
 
-function Country(props) {
-  return <div>Hello World</div>;
+function City(props) {
+  return <h2 className="city-name">{props.cityName}</h2>;
 }
 
-export default Country;
+export default City;

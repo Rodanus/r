@@ -2,12 +2,14 @@ import React from "react";
 import City from "../City/City";
 import "./Cities.css";
 
-function Countries(props) {
+function Cities(props) {
   return (
-    <div>
-      <City />
+    <div className="cities-container">
+      {props.listOfCities.map(city => (
+        <City cityName={city.name} />
+      ))}
     </div>
   );
 }
 
-export default Countries;
+export default Cities;
