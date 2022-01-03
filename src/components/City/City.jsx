@@ -4,11 +4,15 @@ import "./City.css";
 
 function City(props) {
   return (
-    <div className="city-container">
-      <h2 className="city-name">
-        <Link to={`/weather/${props.cityName}`}>{props.cityName}</Link>
-      </h2>
-    </div>
+    <Link
+      to={`/weather/${props.city.name}`}
+      className="city-container"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.1)), url(${props.city.images.small})`
+      }}
+    >
+      <h2 className="city-name">{props.city.name}</h2>
+    </Link>
   );
 }
 

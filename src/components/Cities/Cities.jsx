@@ -6,7 +6,7 @@ function Cities(props) {
   return (
     <div className="cities-container">
       {props.listOfCities.map(city => (
-        <City cityName={city.name} key={city.name} />
+        <City city={city} key={city.name} />
       ))}
     </div>
   );

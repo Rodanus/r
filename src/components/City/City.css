@@ -1,0 +1,16 @@
+.city-container {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.city-name {
+  font-size: 3rem;
+}
