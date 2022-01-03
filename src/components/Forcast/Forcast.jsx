@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import "./Forcast.css";
 
+const API_KEY = process.env.REACT_APP_API_KEY; // Replace with your key.
 function Forcast(props) {
   const { cityName } = useParams();
   const [cityForecast, setCityForecast] = useState({
@@ -15,7 +16,7 @@ function Forcast(props) {
 
   const getWeatherinfo = () => {
     const weatherData = fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${cityName}&aqi=no`
+      `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${cityName}&aqi=no`
     )
       .then(res => res.json())
       .then(res =>
