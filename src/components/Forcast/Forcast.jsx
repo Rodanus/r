@@ -15,18 +15,35 @@ function Forcast() {
   const { backgroundLargeImage } = location.state;
 
   const getWeatherinfo = () => {
-    const weatherData = fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${cityName}&aqi=no`
-    )
-      .then(res => res.json())
-      .then(res =>
-        setCityForecast({
-          cityName: res.location.name,
-          temp: res.current.temp_c,
-          icon: res.current.condition.icon
-        })
+    const storedCityForecaste = localStorage.getItem(`${cityName}ForeCaste`);
+    if (!storedCityForecaste) {
+      const weatherData = fetch(
+        `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${cityName}&aqi=no`
       )
-      .then(() => setIsContentLoaded(true));
+        .then(res => res.json())
+        .then(res => {
+          setCityForecast({
+            cityName: res.location.name,
+            temp: res.current.temp_c,
+            icon: res.current.condition.icon
+          });
+          return res;
+        })
+        .then(res =>
+          localStorage.setItem(
+            `${cityName}ForeCaste`,
+            JSON.stringify({
+              cityName: res.location.name,
+              temp: res.current.temp_c,
+              icon: res.current.condition.icon
+            })
+          )
+        )
+        .then(() => setIsContentLoaded(true));
+    } else if (storedCityForecaste) {
+      setCityForecast(JSON.parse(storedCityForecaste));
+      setIsContentLoaded(true);
+    }
   };
 
   useEffect(() => {
