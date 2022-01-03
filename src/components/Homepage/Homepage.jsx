@@ -35,6 +35,7 @@ function Homepage(props) {
 
   return (
     <div className="homepage-container">
+      <h1 className="homepage-heading">Select a city to check the weather:</h1>
       <Cities listOfCities={citiesToDisplay} />
     </div>
   );

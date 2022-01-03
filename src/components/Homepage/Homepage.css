@@ -1,3 +1,9 @@
 .homepage-container {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage-heading {
+  padding: 3rem 0 0 3rem;
 }
