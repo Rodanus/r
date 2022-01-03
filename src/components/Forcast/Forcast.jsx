@@ -9,6 +9,7 @@ function Forcast(props) {
     temp: 0,
     icon: ""
   });
+  const [isContentLoaded, setIsContentLoaded] = useState(false);
 
   const getWeatherinfo = () => {
     const weatherData = fetch(
@@ -21,14 +22,18 @@ function Forcast(props) {
           temp: res.current.temp_c,
           icon: res.current.condition.icon
         })
-      );
+      )
+      .then(() => setIsContentLoaded(true));
   };
 
   useEffect(() => {
     getWeatherinfo();
-  });
+  }, []);
   return (
     <div>
+      <div className={isContentLoaded ? "loading hide-loading" : "loading"}>
+        Loading...
+      </div>
       <Link to="/" className="homepage-link">
         {"<"} Back To Home
       </Link>
