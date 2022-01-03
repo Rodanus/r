@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import "./Forcast.css";
 
 function Forcast(props) {
@@ -10,6 +10,8 @@ function Forcast(props) {
     icon: ""
   });
   const [isContentLoaded, setIsContentLoaded] = useState(false);
+  const location = useLocation();
+  const { backgroundLargeImage } = location.state;
 
   const getWeatherinfo = () => {
     const weatherData = fetch(
@@ -30,7 +32,12 @@ function Forcast(props) {
     getWeatherinfo();
   }, []);
   return (
-    <div>
+    <div
+      className="forecast-container"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.4)), url(${backgroundLargeImage})`
+      }}
+    >
       <div className={isContentLoaded ? "loading hide-loading" : "loading"}>
         Loading...
       </div>

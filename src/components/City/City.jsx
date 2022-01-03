@@ -6,6 +6,7 @@ function City(props) {
   return (
     <Link
       to={`/weather/${props.city.name}`}
+      state={{ backgroundLargeImage: props.city.images.large }}
       className="city-container"
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.1)), url(${props.city.images.small})`
