@@ -8,7 +8,7 @@ import londonLarge from "../../images/londonLarge.jpg";
 import berlinLarge from "../../images/berlinLarge.jpg";
 import newYorkLarge from "../../images/newYorkLarge.jpg";
 
-function Homepage(props) {
+function Homepage() {
   const citiesToDisplay = [
     {
       name: "Berlin",

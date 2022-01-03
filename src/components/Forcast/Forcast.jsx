@@ -3,7 +3,7 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import "./Forcast.css";
 
 const API_KEY = process.env.REACT_APP_API_KEY; // Replace with your key.
-function Forcast(props) {
+function Forcast() {
   const { cityName } = useParams();
   const [cityForecast, setCityForecast] = useState({
     cityName: "",
